@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { getProducts } from './service/productService';
-import Detail from './components/detail';
+import axios from 'axios';
+import Detail from './components/Detail';
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,9 +20,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getProducts().then(products => {
+    axios.get('https://practiceapi.devmountain.com/products').then(products => {
       this.setState({
-        products: products,
+        products: products.data,
       })
     })
   }
