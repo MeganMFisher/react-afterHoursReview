@@ -9,6 +9,10 @@ class Detail extends Component {
         }
     }
 
+    testingMethods() {
+        return 5
+    }
+
     render() {
         return (
             <div>
